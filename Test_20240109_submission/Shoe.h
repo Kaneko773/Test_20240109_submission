@@ -11,9 +11,6 @@ public:
 	void set_shoe(int deckNum);
 	Card takeCard();
 
-	//デバッグ用
-	void Show_shoe();
-
 	int get_remCardNum() const{
 		return _remCardNum;
 	}

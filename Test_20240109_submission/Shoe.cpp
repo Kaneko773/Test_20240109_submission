@@ -97,9 +97,3 @@ void Shoe::_shuffle() {
 		shuffle = nullptr;
 	}
 }
-
-void Shoe::Show_shoe() {
-	for (int i = 0; i < _remCardNum; ++i) {
-		cout << _shoe[i].get_mark() << "," << _shoe[i].get_number() << endl;
-	}
-}
