@@ -5,6 +5,7 @@ using namespace std;
 Shoe::Shoe() {
 	_shoe = nullptr;
 	_remCardNum = 0;
+	_mode = NONE;
 }
 
 Shoe::~Shoe() {
@@ -30,7 +31,7 @@ Card Shoe::takeCard() {
 
 	//エラーチェック
 	if (_shoe == nullptr) {
-		cout << "シューにカードが入っていません:エラー" << endl;
+		cout << "エラーが起こりました" << endl;
 		return nonCard;
 	}
 	if (_remCardNum <= 0) {
@@ -44,6 +45,13 @@ Card Shoe::takeCard() {
 	--_remCardNum;
 	if (_remCardNum <= 0) {
 		cout << "シュー内のカードが無くなりました" << endl;
+		cout << "カードを補充します" << endl;
+		if (_mode == BACCARAT) {
+			set_shoe(BC_DECK_NUM);
+		}
+		else {
+			cout << "エラーが発生しました" << endl;
+		}
 		return returnCard;
 	}
 	Card* a = _shoe;
@@ -68,6 +76,11 @@ Card Shoe::takeCard() {
 	}
 
 	return returnCard;
+}
+
+void Shoe::set_mode(GameMode mode)
+{
+	_mode = mode;
 }
 
 void Shoe::_shuffle() {

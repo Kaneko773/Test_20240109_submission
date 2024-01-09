@@ -13,12 +13,6 @@ using namespace std;
 void NameChange(Player* p, int& nNPCNum);
 void Baccarat(Shoe* shoe, Player* p);
 
-enum GameMode {
-    NONE = 0,
-    BACCARAT  = 1,
-    NAMECHANGE = 2,
-};
-
 const char* NPCNAME[MAX_PAR_NUM] = {
     "NPC1",
     "NPC2",
@@ -42,7 +36,7 @@ int main()
 
     do{
         printf("操作できるプレイヤーが %d 人、NPCが %d 人です\n", notNPCNum, MAX_PAR_NUM - notNPCNum);
-        cout << "1.バカラ\n2.名前変更\n"
+        cout << "1.バカラ\n2.操作可能人数、名前変更\n"
              << "0.ゲームを終了" << endl;
         cout << "\nゲームを選択　＞　" << flush;
         cin >> mode;
@@ -154,6 +148,7 @@ void NameChange(Player* p, int& nNPCNum) {
 }
 
 void Baccarat(Shoe* shoe, Player* p) {
+    shoe->set_mode(BACCARAT);
     shoe->set_shoe(BC_DECK_NUM);
     bool conti = true;
     do {
