@@ -232,9 +232,9 @@ void Baccarat(Shoe* shoe, Player* p) {
         }
 
         //手札表示
-        cout << "============================" << endl;
-        cout << "            result          " << endl;
-        cout << "============================" << endl;
+        cout << "======================" << endl;
+        cout << "        result          " << endl;
+        cout << "======================" << endl;
 
         cout << "======================" << endl;
         cout << p[0].get_pName() << endl;
