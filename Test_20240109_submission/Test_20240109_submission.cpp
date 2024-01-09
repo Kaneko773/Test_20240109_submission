@@ -192,7 +192,10 @@ void Baccarat(Shoe* shoe, Player* p) {
             else {
                 switch (p[1].get_pHand(3)->get_number())
                 {
-                case 0: 
+                case 10:
+                case 11:
+                case 12:
+                case 13:
                     if (p[0].BCcalcScore() <= 3) p[0].takeCard(shoe);
                     break;
                 case 1: 
